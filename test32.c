@@ -32,7 +32,7 @@
 int main(int argc, char const *argv[])
 {
     // getchar和scanf -> 缓存区 <- 键盘
-    // getchar和scanf都是从缓冲区拿数据, 而不是从键盘
+    // getchar和scanf这个两个输入函数都是从缓冲区拿数据, 而不是从键盘,键盘输入信息到缓冲区
     char password[20] = {0};
     printf("请输入密码:>");
     // 输入: 123456 abcdef\n

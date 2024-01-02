@@ -24,7 +24,6 @@ int main(int argc, char const *argv[])
     }
     //char ch[5] = {'a','b','c'};//不完全初始化,剩余的默认为0
     
-
     return 0;
 }
 

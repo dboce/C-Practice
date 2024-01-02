@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
     printf("%c\n", "\130"); // X; 8进制的130是十进制的88
     // X -- ASCII码值是88
 
-    printf("%c\n", '\x30'); // 0; 16进制的130是十进制的48
+    printf("%c\n", '\x30'); // 0; 16进制的30是十进制的48
 
     printf("%d\n", strlen("c:\test\128\test.c")); //14
     // \t是一个转义字符; \32是一个转义字符

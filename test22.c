@@ -4,6 +4,17 @@
 // typedef: 类型重命名
 typedef unsigned int u_int;
 
+void test()
+{
+    static int a = 1; // 改变了局部变量的生命周期
+    a++;
+    printf("%d", a); // 打印: 2-11
+
+    // int a = 1;
+    // a++;
+    // printf("%d", a); // 打印: 10个2
+}
+
 int main(int argc, char const *argv[])
 {
     unsigned int num = 100;
@@ -39,15 +50,4 @@ int main(int argc, char const *argv[])
     }
 
     return 0;
-}
-
-void test()
-{
-    static int a = 1; // 改变了局部变量的生命周期
-    a++;
-    printf("%d", a); // 打印: 2-11
-
-    // int a = 1;
-    // a++;
-    // printf("%d", a); // 打印: 10个2
 }

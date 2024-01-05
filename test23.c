@@ -1,7 +1,7 @@
 /// 常量和宏
 #include <stdio.h>
 
-// define 是一个预处理指令
+// define 是一个预处理指令, 不是关键字
 // 1.define定义符号
 #define MAX 1000
 

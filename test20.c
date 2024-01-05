@@ -1,19 +1,14 @@
 /// 常见关键字
 /**
- * auto break case char const continue default do double eles
- * enum extern float for goto if int logn register return short
+ * auto break case char const continue default do double else
+ * enum extern float for goto if int long register return short
  * signed sizeof static struct switch typedef union unsigned
  * void volatile while
- *
  */
-#include <stdio.h>
 
 int main(int argc, char const *argv[])
 {
-    /* C语言提供的关键字
-    1. c语言提供的,
-
-     */
+    // C语言提供的关键字
 
     // auto 是自动的 - 每个局部变量都是auto修饰的
     auto int a = 10; // 自动创建,自动销毁的-自动变量, auto一般都省略写

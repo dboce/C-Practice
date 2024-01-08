@@ -7,6 +7,23 @@ F11 - 逐语句
 F10 - 逐过程
 */
 
+int func(int a)
+{
+    int b;
+    switch (a)
+    {
+    case 1:
+        b = 30;
+    case 2:
+        b = 20;
+    case 3:
+        b = 10;
+    default:
+        b = 0;
+    }
+    return b;
+}
+
 int main(int argc, char const *argv[])
 {
     // 习题1
@@ -50,7 +67,7 @@ int main(int argc, char const *argv[])
     int b = 0;
     int c = 0;
     // 输入
-    scanf("%d%d%d", &a, &b, &c);
+    scanf("%d %d %d", &a, &b, &c);
     // 调整顺序
     if (a < b)
     {
@@ -72,7 +89,7 @@ int main(int argc, char const *argv[])
     }
     // 输出 - 从大到小
     printf("%d %d %d\n", &a, &b, &c);
-    return 0;
+    
 
     // 习题6: 写一个代码打印1-100之间所有3的倍数的数字
     // 方式一:
@@ -117,21 +134,6 @@ int main(int argc, char const *argv[])
         n = t;
     }
     printf("最大公约数就是: %d\n", n);
-}
 
-int func(int a)
-{
-    int b;
-    switch (a)
-    {
-    case 1:
-        b = 30;
-    case 2:
-        b = 20;
-    case 3:
-        b = 10;
-    default:
-        b = 0;
-    }
-    return b;
+    return 0;
 }

@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
     //     // 判断i是否为素数
     //     // 2 到 i-1 之间的数字去试除, 看能不能整除
     //     int j = 0;
-    //     for (j = 0; j < i; j++)
+    //     for (j = 2; j < i; j++)
     //     {
     //         if (i % j == 0)
     //         {
@@ -52,7 +52,7 @@ int main(int argc, char const *argv[])
     //     // 2 到 i-1 之间的数字去试除, 看能不能整除
     //     int j = 0;
     //     int flag = 1; // 假设i就是素数
-    //     for (j = 0; j < i; j++)
+    //     for (j = 2; j < i; j++)
     //     {
     //         if (i % j == 0)
     //         {
@@ -76,7 +76,7 @@ int main(int argc, char const *argv[])
         // 2 到 i-1 之间的数字去试除, 看能不能整除
         int j = 0;
         int flag = 1; // 假设i就是素数
-        for (j = 0; j <= sqrt(i); j++)
+        for (j = 2; j <= sqrt(i); j++)
         {
             if (i % j == 0)
             {
@@ -96,7 +96,7 @@ int main(int argc, char const *argv[])
     // goto语句只能在一个函数范围内调整, 不能跨函数
 
     // 使用示例: 关机程序-只要运行起来,电脑就在1分钟内关机, 如果输入:我是猪, 就取消关机!
-    // C语言的关机命令: shutdown -s -t 60 #关机 设置 时间 为60秒后
+    // 关机命令: shutdown -s -t 60 #关机 设置 时间 为60秒后
     // 取消关机命令: shutdown -a #取消关机
     // C语言提供了一个函数: system() - 执行系统命令的
 

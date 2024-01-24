@@ -4,7 +4,7 @@
 /// 模拟实现字符串相关函数
 
 // 方式一:
-void my_strcpy(char *dest, char *src)
+void my_strcpy1(char *dest, char *src)
 {
     while (*src != '\0')
     {
@@ -15,7 +15,7 @@ void my_strcpy(char *dest, char *src)
     *dest = *src; // 把最后的\0赋值给 *dest
 }
 // 方式二: (方式一的升级)
-void my_strcpy(char *dest, char *src)
+void my_strcpy2(char *dest, char *src)
 {
     while (*src != '\0')
     {
@@ -24,7 +24,7 @@ void my_strcpy(char *dest, char *src)
     *dest = *src; // \0的拷贝
 }
 // 方式三: (方式二的升级)
-void my_strcpy(char *dest, char *src)
+void my_strcpy3(char *dest, char *src)
 {
     while (*dest++ = *src++) // \0就是0, 0为假, 这样循环就停止了
     {
@@ -32,7 +32,7 @@ void my_strcpy(char *dest, char *src)
     }
 }
 // 方式四: (防止传参为NULL,空指针)
-void my_strcpy(char *dest, char *src)
+void my_strcpy4(char *dest, char *src)
 {
     assert(src != NULL);     // 断言: 为假就会报错; 为真不提示.
     assert(dest != NULL);    // 帮助我们快速定位问题
@@ -41,15 +41,19 @@ void my_strcpy(char *dest, char *src)
         ;
     }
 }
-// 方式五: 防止desc(字多) 和 src(字少)传反了
-void my_strcpy(char *dest, const char *src)
+// 方式五: 防止desc和src传反了,使其报语法错误
+// 把src指向的内容拷贝放进dest指向的空间中
+// 从本质上讲, 希望dest指向的内容被修改, src指向的内容不应该被修改
+char *my_strcpy(char *dest, const char *src)
 {
-    assert(src != NULL);     // 断言: 为假就会报错; 为真不提示.
-    assert(dest != NULL);    // 帮助我们快速定位问题
+    assert(src != NULL); // 断言
+    assert(dest != NULL);
+    char *ret = dest;
     while (*dest++ = *src++) // \0就是0, 0为假, 这样循环就停止了
     {
         ;
     }
+    return ret; // 返回目标空间的起始地址
 }
 
 int main(int argc, char const *argv[])
@@ -65,6 +69,8 @@ int main(int argc, char const *argv[])
     // my_strcpy(arr1, NULL);
     // my_strcpy(arr2, arr1);
     printf("%s\n", arr1);
+    // 参数一:目标空间的起始地址; 参数二:源空间的起始地址
+    printf("%s\n", my_strcpy(arr1, arr2)); // 链式访问
 
     // const的作用
     // const修饰变量, 这个变量就被称为常变量, 不能被修改, 但是本质上还是变量
